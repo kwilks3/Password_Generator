@@ -34,14 +34,21 @@
             ></input>
           </article>
         </form>
-        <a href="#" class="btn btn-primary" id="generate">Generate</a>
+        <button onclick="passPrompt()" class="btn btn-primary" id="generate">Generate</button>
     </article>
       <footer class="card-footer  outer" >Hope this helps!</footer>
     </section>
   </section>
     <script>
       // on click output prompt for password criteria
-      // prompt user to input password length between 8 and 128
+      function passPrompt(){
+        alert("Please select the criteria for your password.");
+        // prompt user to input password length between 8 and 128
+        const passLen = prompt("Choose a password length between 8 and 128 characters.")
+        // const upper = confirm("Would you like to include uppercase letters?");
+        // const lower = confirm()
+      }
+      
       // if password is outside of required length output an error
       // confirm if password can contain lowercase, uppercase, numeric, and/or special charactera
       // once all criteria is entered generate and return a password to the page
