@@ -1,7 +1,19 @@
-.card-header {
-  background-color: #64a6bd;
+.container {
+  position: relative;
+  margin-top: 10%;
+}
+.outer {
+  background-color: #ada7c9;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%:
+  width: 100%;
+}
+.card-body {
+  background-color: #d7b9d5;
+}
+#generate {
+  background-color: #64a6bd;
+  border-color: #f4cae0;
+  color: black;
 }
