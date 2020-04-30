@@ -41,13 +41,15 @@
   </section>
     <script>
       // on click output prompt for password criteria
+    
+
       function passPrompt(){
         alert("Please select the criteria for your password.");
         // prompt user to input password length between 8 and 128
-        const passLen = prompt("Please choose a password length between 8 and 128 characters.")
+        var passLen = prompt("Please choose a password length between 8 and 128 characters.");
         // confirm if password can contain lowercase, uppercase, numeric, and/or special characters
-        const upper = confirm("Would you like to include uppercase letters?");
-        // const lower = confirm()
+        var upper = confirm("Would you like to include uppercase letters?");
+        var lower = confirm("Would you like to include lowercase letters?");
       }
       
       // if password is outside of required length output an error
