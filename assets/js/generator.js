@@ -77,6 +77,10 @@ let special = [
   "+",
   "=",
 ];
+let upper;
+let lower;
+let numer;
+let spec;
 
 function passPrompt() {
   alert("Please select the criteria for your password.");
@@ -91,13 +95,14 @@ function passPrompt() {
     );
   }
   // confirm if password can contain lowercase, uppercase, numeric, and/or special characters
-  var upper = confirm("Would you like to include uppercase letters?");
-  var lower = confirm("Would you like to include lowercase letters?");
-  var numer = confirm("Would you like to include numeric values?");
-  var spec = confirm("Would you like to include special characters?");
-
+  function prompts() {
+    upper = confirm("Would you like to include uppercase letters?");
+    lower = confirm("Would you like to include lowercase letters?");
+    numer = confirm("Would you like to include numeric values?");
+    spec = confirm("Would you like to include special characters?");
+  }
   // user must select at least one character type
-
+  prompts();
   while (
     upper === false &&
     lower === false &&
@@ -105,10 +110,7 @@ function passPrompt() {
     spec === false
   ) {
     alert("You must select at least ONE character type!");
-    upper = confirm("Would you like to include uppercase letters?");
-    lower = confirm("Would you like to include lowercase letters?");
-    numer = confirm("Would you like to include numeric values?");
-    spec = confirm("Would you like to include special characters?");
+    prompts();
   }
   // evaluate which criteria the user wants and add those to the password array
   switch (upper) {
