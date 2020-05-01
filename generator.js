@@ -1,6 +1,7 @@
 // on click output prompt for password criteria
 
 let password = [];
+// create arrays for lowercase, uppercase, numeric, and special characters
 let lowercase = [
   "a",
   "b",
@@ -76,7 +77,6 @@ let special = [
   "+",
   "=",
 ];
-let finalPass = [];
 
 function passPrompt() {
   alert("Please select the criteria for your password.");
@@ -89,6 +89,7 @@ function passPrompt() {
   var lower = confirm("Would you like to include lowercase letters?");
   var numer = confirm("Would you like to include numeric values?");
   var spec = confirm("Would you like to include special characters?");
+  // evaluate which criteria the user wants and add those to the password array
   switch (upper) {
     case true:
       password = password.concat(uppercase);
@@ -109,17 +110,17 @@ function passPrompt() {
       password = password.concat(special);
       break;
   }
-
+  //finalPass will be the final password to be output for the user
+  let finalPass = [];
+  // loop through the password array and choose a random index each time until you hit the length of the password
   for (var i = 0; i < passLen; i++) {
     finalPass = finalPass.concat(
       password[Math.floor(Math.random() * password.length)]
     );
   }
-
-  return finalPass;
+  // convert finalPass to a string and remove the commas
+  finalPass = finalPass.toString();
+  finalPass = finalPass.replace(/,/g, "");
+  console.log(finalPass);
   // if password is outside of required length output an error
-  // once all criteria is entered generate and return a password to the page
-  // if upper, lower, numer, and spec = true then generate pass with all for with length of passLen
-
-  // }
 }
