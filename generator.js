@@ -121,6 +121,6 @@ function passPrompt() {
   // convert finalPass to a string and remove the commas
   finalPass = finalPass.toString();
   finalPass = finalPass.replace(/,/g, "");
-  console.log(finalPass);
+  document.getElementById("printPass").innerHTML = finalPass;
   // if password is outside of required length output an error
 }

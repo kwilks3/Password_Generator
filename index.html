@@ -13,34 +13,33 @@
     <title>Password Generator</title>
   </head>
   <body>
-    
-    <section class= "container">
-    <section class="card text-center " >
-      <header class="card-header outer" >
+    <section class="container">
+      <section class="card text-center">
+        <header class="card-header outer">
           <h1>Password Generator</h1>
         </header>
-      <article class="card-body">
-        <p class="card-text">
-          Click the button below to generate a secure password. You can set the
-          criteria to include uppercase, lowercase, numeric, and special
-          characters. Give it a whirl!
-        </p>
-        <form>
-          <article class="form-group">
-            <input
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              placeholder="Secure password"
-            ></input>
-          </article>
-        </form>
-        <button onclick= "passPrompt()" class="btn btn-primary" id="generate">Generate</button>
-    </article>
-      <footer class="card-footer  outer" >Hope this helps!</footer>
+        <article class="card-body">
+          <p class="card-text">
+            Click the button below to generate a secure password. You can set
+            the criteria to include uppercase, lowercase, numeric, and special
+            characters. Give it a whirl!
+          </p>
+          <form>
+            <article class="form-group">
+              <textarea
+                class="form-control"
+                id="printPass"
+                placeholder="Secure password"
+              ></textarea>
+            </article>
+          </form>
+          <button onclick="passPrompt()" class="btn btn-primary" id="generate">
+            Generate
+          </button>
+        </article>
+        <footer class="card-footer outer">Hope this helps!</footer>
+      </section>
     </section>
-  </section>
-    <script src= "./generator.js">
-     
-    </script>
+    <script src="./generator.js"></script>
   </body>
 </html>
