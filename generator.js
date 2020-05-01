@@ -84,6 +84,12 @@ function passPrompt() {
   var passLen = prompt(
     "Please choose a password length between 8 and 128 characters."
   );
+  // if password is outside of required length output an error
+  while (passLen < 8 || passLen > 128) {
+    passLen = prompt(
+      "ERROR! Password length must be between 8 and 128 characters."
+    );
+  }
   // confirm if password can contain lowercase, uppercase, numeric, and/or special characters
   var upper = confirm("Would you like to include uppercase letters?");
   var lower = confirm("Would you like to include lowercase letters?");
@@ -122,5 +128,4 @@ function passPrompt() {
   finalPass = finalPass.toString();
   finalPass = finalPass.replace(/,/g, "");
   document.getElementById("printPass").innerHTML = finalPass;
-  // if password is outside of required length output an error
 }
