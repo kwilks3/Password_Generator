@@ -1,5 +1,5 @@
 // on click output prompt for password criteria
-
+let generatorElement = document.querySelector("#generate");
 let password = [];
 // create arrays for lowercase, uppercase, numeric, and special characters
 let lowercase = [
@@ -81,11 +81,12 @@ let upper;
 let lower;
 let numer;
 let spec;
+generatorElement.addEventListener("click", passPrompt);
 
 function passPrompt() {
   alert("Please select the criteria for your password.");
   // prompt user to input password length between 8 and 128
-  var passLen = prompt(
+  let passLen = prompt(
     "Please choose a password length between 8 and 128 characters."
   );
   // if password is outside of required length output an error
@@ -113,37 +114,26 @@ function passPrompt() {
     prompts();
   }
   // evaluate which criteria the user wants and add those to the password array
-  switch (upper) {
-    case true:
-      password = password.concat(uppercase);
-      break;
+
+  if (upper) {
+    password = password.concat(uppercase);
   }
-  switch (lower) {
-    case true:
-      password = password.concat(lowercase);
-      break;
+  if (lower) {
+    password = password.concat(lowercase);
   }
-  switch (numer) {
-    case true:
-      password = password.concat(numeric);
-      break;
+  if (numer) {
+    password = password.concat(numeric);
   }
-  switch (spec) {
-    case true:
-      password = password.concat(special);
-      break;
+  if (spec) {
+    password = password.concat(special);
   }
   //finalPass will be the final password to be output for the user
-  let finalPass = [];
+  let finalPass = "";
   // loop through the password array and choose a random index each time until you hit the length of the password
-  for (var i = 0; i < passLen; i++) {
-    finalPass = finalPass.concat(
-      password[Math.floor(Math.random() * password.length)]
-    );
+  for (let i = 0; i < passLen; i++) {
+    finalPass += password[Math.floor(Math.random() * password.length)];
   }
 
   // convert finalPass to a string and remove the commas
-  finalPass = finalPass.toString();
-  finalPass = finalPass.replace(/,/g, "");
   document.getElementById("printPass").innerHTML = finalPass;
 }
