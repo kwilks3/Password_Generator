@@ -95,6 +95,21 @@ function passPrompt() {
   var lower = confirm("Would you like to include lowercase letters?");
   var numer = confirm("Would you like to include numeric values?");
   var spec = confirm("Would you like to include special characters?");
+
+  // user must select at least one character type
+
+  while (
+    upper === false &&
+    lower === false &&
+    numer === false &&
+    spec === false
+  ) {
+    alert("You must select at least ONE character type!");
+    upper = confirm("Would you like to include uppercase letters?");
+    lower = confirm("Would you like to include lowercase letters?");
+    numer = confirm("Would you like to include numeric values?");
+    spec = confirm("Would you like to include special characters?");
+  }
   // evaluate which criteria the user wants and add those to the password array
   switch (upper) {
     case true:
@@ -124,6 +139,7 @@ function passPrompt() {
       password[Math.floor(Math.random() * password.length)]
     );
   }
+
   // convert finalPass to a string and remove the commas
   finalPass = finalPass.toString();
   finalPass = finalPass.replace(/,/g, "");
